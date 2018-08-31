@@ -1,0 +1,21 @@
+{
+    "name": "Quotes Extensions",
+    "description" : "Get instipirational quotes",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+      "default_popup": "face.html"
+    },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false,
+      "permissions":["videoCapture"]
+    },
+    "permissions": ["activeTab","<all_urls>"],
+    "content_scripts":[
+        {
+          "matches":["<all_urls>"],
+          "js":["face-ext.js"]
+        }
+      ]
+}
